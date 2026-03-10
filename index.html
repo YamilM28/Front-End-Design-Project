@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>BookNook</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="search-section">
+
+  <img src="BookNookLogo.png" alt="BookNook Logo" class="logo">
+
+  <input 
+    type="text" 
+    id="searchBar" 
+    placeholder="Search by title or author..."
+    onkeyup="filterBooks()"
+  >
+
+  <select id="genreFilter" onchange="filterBooks()">
+    <option value="all">All Genres</option>
+    <option value="fantasy">Fantasy</option>
+    <option value="dystopian">Dystopian</option>
+    <option value="mystery">Mystery</option>
+    <option value="romance">Romance</option>
+  </select>
+  
+  <select id="pageFilter" onchange="filterBooks()">
+    <option value="all">All Page Counts</option>
+    <option value="short">Under 200 pages</option>
+    <option value="medium">200-400 pages</option>
+    <option value="long">Over 400 pages</option>
+  </select>
+  
+  <select id="statusFilter" onchange="filterBooks()">
+    <option value="all">All Status</option>
+    <option value="want to read">Want to Read</option>
+    <option value="currently reading">Currently Reading</option>
+    <option value="read">Read</option>
+  </select>
+
+  </div>  
+  
+  <div class="input-section">
+  <h3>Add a New Book</h3>
+
+  <input type="text" id="titleIn" placeholder="Book Title">
+  <input type="text" id="authorIn" placeholder="Author">
+  <input type="text" id="genreIn" placeholder="Genre">
+  <input type="number" id="pagesIn" placeholder="Number of Pages">
+  <input type="url" id="coverIn" placeholder="BookCover URL">
+
+  <button onclick="addBook()" class="add-btn">Add to Library</button>
+  </div>
+
+  <div id="libraryContainer"></div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
